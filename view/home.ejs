@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+
+<body>
+    <% urls.forEach((url,idx)=>{%>
+        <li>
+            <a href="localhost:8000/api/url/data/<%= url.shortIdd %>">
+                <%= url.shortIdd %>
+            </a>
+        </li>
+
+        <% }) %>
+</body>
+
+</html>
