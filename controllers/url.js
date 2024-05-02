@@ -17,6 +17,7 @@ async function handlePostUrl(req, res) {
       redirectUrl,
       shortIdd: shortId,
       userName,
+      createdBy: req.user._id, // or yeah req.user me data mil rha hai jb user Login kar leta hai data set hoo jata hai
     });
 
     await newUrl.save();
@@ -64,7 +65,8 @@ async function handleHomeData(req, res) {
 
 async function handleCreateUrlPage(req, res) {
   try {
-    const allUrls = await urlModel.find({}); //get all the  shortenerURLs from DB
+    if (!req.user) return res.redirect("./login");
+    const allUrls = await urlModel.find({ createdBy: req.user._id }); //get all the  shortenerURLs from DB according to createdBy/user id
     res.render("createUrl.ejs", { urls: allUrls }); // and display all the shortUrl on this page
   } catch (err) {
     console.error(err);

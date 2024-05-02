@@ -5,7 +5,6 @@ function setUser(sessionId, user) {
 }
 
 function getUser(sessionId) {
-  console.log("sessionIdToUserMap======", sessionIdToUserMap);
   return sessionIdToUserMap.get(sessionId);
 }
 

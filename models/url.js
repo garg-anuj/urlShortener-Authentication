@@ -12,6 +12,11 @@ const urlSchema = mongoose.Schema(
     shortIdd: { type: String, require: true, unique: true },
     userName: { type: String, require: true },
     visitHistory: [{ timestamp: { type: Number } }],
+    //yeah hm use se ref le rhe hai ise bna kar kar sirf ek paricular user ko apni short url dikhwa skte not the all
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   { timestamp: true }
 );

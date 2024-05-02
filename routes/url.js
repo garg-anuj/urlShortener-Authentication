@@ -15,3 +15,6 @@ urlRouter.get("/home", handleHomeData); // default route for home page
 // urlRouter.route("/api/url").get(handleGetShortUrl);
 
 module.exports = urlRouter;
+
+//piyush
+//  /       /createUrl

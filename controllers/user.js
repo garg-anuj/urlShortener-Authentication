@@ -16,7 +16,7 @@ async function handleSignUp(req, res) {
   const { userName, email, password } = req.body;
   const newUser = await userModel.create({ userName, email, password });
   await newUser.save();
-  return res.redirect("/createUrl");
+  return res.redirect("/login");
 }
 
 async function handleLogin(req, res) {
